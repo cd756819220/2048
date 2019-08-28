@@ -124,7 +124,8 @@ public class Game : MonoBehaviour
         moveItem.transform.SetParent(gameBg, false);
         setMoveItemPosByRowAndCol(moveItem.transform, row, col);
         var moveItemScript = moveItem.GetComponent<MoveItem>();
-        index = index > 0 ? index : (UnityEngine.Random.value <= 0.6 ? 1 : 2);
+        //index = index > 0 ? index : (UnityEngine.Random.value <= 0.6 ? 1 : 2);
+        index = index > 0 ? index : UnityEngine.Random.Range(1, 3);
         moveItemScript.setMoveItemValue(index, moveItemColorList[index - 1], moveNumColorList[index - 1]);
         moveItemMap[row][col] = moveItem;
     }
