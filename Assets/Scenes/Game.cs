@@ -121,7 +121,7 @@ public class Game : MonoBehaviour
         col = col >= 0 ? col : newCreateIndex % ColNum;
         var moveItem = _createMoveItem();
         var transform = moveItem.transform as RectTransform;
-        moveItem.transform.SetParent(gameBg);
+        moveItem.transform.SetParent(gameBg, false);
         setMoveItemPosByRowAndCol(moveItem.transform, row, col);
         var moveItemScript = moveItem.GetComponent<MoveItem>();
         index = index > 0 ? index : (UnityEngine.Random.value <= 0.6 ? 1 : 2);
@@ -131,8 +131,8 @@ public class Game : MonoBehaviour
 
     private void setMoveItemPosByRowAndCol(Transform transform, int row, int col)
     {
-        Vector2 leftTopPos = new Vector2(-75 * 1.5f, -75 * -1.5f);
-        transform.localPosition = new Vector3(leftTopPos.x + col * 75, leftTopPos.y - row * 75, 0);
+        Vector2 leftTopPos = new Vector2(-150 * 1.5f, -150 * -1.5f);
+        transform.localPosition = new Vector3(leftTopPos.x + col * 150, leftTopPos.y - row * 150, 0);
     }
 
     private MoveItem _createMoveItem()

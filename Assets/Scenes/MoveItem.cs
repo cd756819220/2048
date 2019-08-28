@@ -64,6 +64,9 @@ public class MoveItem : MonoBehaviour
         if (this._index == -1) return;
         if (this._image)
         {
+            Random random;
+            random.Range(1, 4);
+            this._image.sprite = Resources.Load<Sprite>("");
             this._image.color = this._colorBg;
             if (this._isChanged)
             {
